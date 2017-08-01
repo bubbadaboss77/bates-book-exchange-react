@@ -59,7 +59,7 @@ class Login extends React.Component {
                 <center>
                   <br/><br/>
                 <h1>BookSwap</h1>
-                <h3>LOGIN</h3>
+                <h3>Login to sell your books!</h3>
                 <TextField
                   hintText="email"
                   floatingLabelText="email"
