@@ -6,6 +6,14 @@ var axios = require('axios');
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 import styles from '../assets/stylesheets/base.scss';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const button = {
+    margin: 12,
+    fontFamily: "Courier",
+    backgroundColor: "#96070c",
+    //backgroundColor: "#96070c",
+};
 
 class Login extends React.Component {
     constructor(props) {
@@ -42,7 +50,7 @@ class Login extends React.Component {
         if(this.state.loggedIn) {
             return(
               <div>
-                <Redirect to={'/portal'}/>
+                <Redirect to={'/home'}/>
               </div>
             );
         } else {
@@ -50,16 +58,16 @@ class Login extends React.Component {
               <div>
                 <center>
                   <br/><br/>
-                <h1>R E E D O C S</h1>
+                <h1>BookSwap</h1>
                 <h3>LOGIN</h3>
                 <TextField
-                  hintText="username"
-                  floatingLabelText="username"
+                  hintText="email"
+                  floatingLabelText="email"
                   floatingLabelStyle={{'color': '#B39DDB'}}
                   underlineFocusStyle={{'borderBottom': 'solid #000000'}}
-                  onChange={(e) => this.setState({username: e.target.value})}
+                  onChange={(e) => this.setState({email: e.target.value})}
                   type="text"
-                  name="username"
+                  name="email"
                 /><br />
                 <TextField
                   hintText="password"
@@ -71,20 +79,22 @@ class Login extends React.Component {
                   name="password"
                 /><br /><br/>
 
-                <FlatButton
-                  style={{'display': 'flex'}}
+                <RaisedButton
+                  style={button}
                   fullWidth={false}
                   hoverColor="#B39DDB"
                   label="Login"
                   onClick={() => this.onSubmit()}
                 />
-                <FlatButton
-                  style={{'display': 'flex'}}
-                  fullWidth={false}
-                  hoverColor="#B39DDB"
-                  label="Register"
-                  containerElement={<Link to="/register" />}
-                />
+                <center>
+                    <RaisedButton
+                      style={button}
+                      fullWidth={false}
+                      hoverColor="#B39DDB"
+                      label="Register"
+                      containerElement={<Link to="/register" />}
+                    />
+                    </center>
                 </center>
               </div>
             );
