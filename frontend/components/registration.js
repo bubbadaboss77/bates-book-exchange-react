@@ -4,13 +4,13 @@ import {Redirect, Link} from 'react-router-dom';
 var axios = require('axios');
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
-import styles from '../assets/stylesheets/base.scss';
+import '../assets/stylesheets/base.scss';
 
 class Registration extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            email: "",
             password: "",
             isRegistered: false
         };
@@ -22,7 +22,7 @@ class Registration extends React.Component {
             method: 'POST',
             url: 'http://localhost:3000/registration', // need to define this route
             data: {
-                username: this.state.username,
+                email: this.state.email,
                 password: this.state.password, // Hash this password?
             }
         })
@@ -45,16 +45,16 @@ class Registration extends React.Component {
           <div>
             <center>
               <br/><br/>
-            <h1> C U R L D O C S</h1>
-            <h3>REGISTER</h3>
+            <h1> Textbook Exchange</h1>
+            <h3>Register to sell your books!</h3>
             <TextField
               id="text-field-default"
-              floatingLabelText="username"
+              floatingLabelText="email"
               floatingLabelStyle={{'color': '#B39DDB'}}
               underlineFocusStyle={{'borderBottom': 'solid #000000'}}
-              onChange={(event) => this.setState({username: event.target.value })}
+              onChange={(event) => this.setState({email: event.target.value })}
               type="text"
-              name="username"/>
+              name="email"/>
                 <br/>
             <TextField
               id="text-field-default"

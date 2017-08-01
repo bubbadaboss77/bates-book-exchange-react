@@ -26,18 +26,17 @@ const button = {
 // }
 class Home extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
     }
-    render(){
+    render() {
         return (
         <div>
                 <AppBar
-                    className='nav'
+                    className="nav"
                     title="Bobcat Book Exchange"
                     iconClassNameRight="muidocs-icon-navigation-expand-more"
                     iconElementRight={<FlatButton label="Login" containerElement={<Link to="/login" />} />}
                 />
-            
             <div style={style}>
             <center>
                 <h1>Bobcat Book Exchange</h1>
@@ -53,9 +52,8 @@ class Home extends React.Component {
             </center>
             </div>
         </div>
-        )
+        );
     }
-
 }
 
 module.exports = Home;

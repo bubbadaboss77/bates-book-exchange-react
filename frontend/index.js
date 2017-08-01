@@ -10,21 +10,22 @@ import Registration from './components/registration';
 import ReactDOM from 'react-dom';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import {Switch, Redirect, Route, HashRouter} from 'react-router-dom';
 
 injectTapEventPlugin();
 
 ReactDOM.render(
     <HashRouter>
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+        <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
           <div>
               <Switch>
-                  <Redirect from='/' to ='/home' strict />
+                  <Redirect from="/" to ="/home" strict />
               </Switch>
-              <Route strict path='/home' component={Home}/>
-              <Route strict path='/how' component={How}/>
-              <Route strict path='/register' component={Registration}/>
-              <Route strict path='/login' component={Login}/>
+              <Route strict path="/home" component={Home}/>
+              <Route strict path="/how" component={How}/>
+              <Route strict path="/register" component={Registration}/>
+              <Route strict path="/login" component={Login}/>
           </div>
         </MuiThemeProvider>
     </HashRouter>,
